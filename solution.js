@@ -20,7 +20,7 @@ var twoSum = function(nums, target) {
     let dict = {};
     let result = [];
     
-    for (i = 0; i < nums.length; i++) {     // loop once to create dictionary
+    for (i = 0; i < nums.length; i++) {      // loop once to create dictionary
         let num = nums[i];
         if (dict[num]) {
             dict[num].count++;
@@ -36,11 +36,11 @@ var twoSum = function(nums, target) {
         
         if (difference == num) {             // if two of same number are required, check that more than one are present
             if (dict[num].count > 1) {
-                result = dict[num].index.slice(0, 2);
+                result = dict[num].index;    // REFACTOR: per instructions, exactly one solution--index will not exceed length of 2
                 break
             };
             
-        } else {                            // else, check if difference is present in dictionary
+        } else {                             // else, check if difference is present in dictionary
             if (dict[difference]) {
                 result.push(dict[num].index[0]);
                 result.push(dict[difference].index[0]);
